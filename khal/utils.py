@@ -324,7 +324,7 @@ def expand(vevent, href=''):
             dtstart = dtstart.replace(tzinfo=None)
 
         rrule = dateutil.rrule.rrulestr(
-            rrule_param.to_ical().decode(),
+            rrule_param.to_ical().decode().replace('Z', '')
             dtstart=dtstart
         )
 
