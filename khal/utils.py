@@ -325,7 +325,8 @@ def expand(vevent, href=''):
 
         rrule = dateutil.rrule.rrulestr(
             rrule_param.to_ical().decode().replace('Z', ''),
-            dtstart=dtstart
+            dtstart=dtstart,
+            ignoretz=True,
         )
 
         if rrule._until is None:
